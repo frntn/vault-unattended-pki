@@ -1,0 +1,45 @@
+# vault storage
+vault/
+
+# vault server tls
+vault.crt
+vault.key
+
+# vault config file
+vault.hcl
+
+# vault unseal keys
+unseal.keys
+
+# vault auth tokens
+root.token
+server.token
+client.token
+
+# ca
+ca-root.issuing_ca.pem.crt
+ca-root.pem.crt
+ca-root.pem.key
+
+ca-inter-issuing_ca.pem.crt
+ca-inter.pem.crt
+ca-inter.pem.csr
+ca-inter.pem.key
+
+# server
+server.ca_chain.pem.crt
+server.issuing_ca.pem.crt
+server.pem.crt
+server.pem.key
+
+# client
+client.ca_chain.pem.crt
+client.issuing_ca.pem.crt
+client.pem.crt
+client.pem.key
+
+client.p12
+client.p12.pass
+
+# misc
+nohup.out
