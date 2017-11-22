@@ -24,7 +24,7 @@ msg() {
 # =========================================================================== CLEANUP
 
 killall vault 2>/dev/null
-sleep 5
+sleep 1
 
 rm -f client.* server.* ca-root.* ca-inter.* vault.hcl unseal.keys *.token
 rm -rf vault/
@@ -58,7 +58,7 @@ export VAULT_SKIP_VERIFY=true
 export VAULT_ADDR="https://127.0.0.1:8200"
 
 nohup vault server -config=vault.hcl >/dev/null 2>&1 & 
-sleep 5
+sleep 3
 
 # =========================================================================== INIT/UNSEAL/AUTH
 
