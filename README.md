@@ -15,6 +15,8 @@ Start the script
 $ ./demo.sh
 ```
 
+![screencast](https://media.githubusercontent.com/media/frntn/vault-unattended-pki/master/demo.gif)
+
 ## What it does
 
 Basically the script starts vault, and use its `pki` mount point to create and configure :

@@ -93,7 +93,7 @@ umask 377
 # =========================================================================== ROOT
 
 msg rootca-mount "Mount ROOT CA" red
-vault mount -max-lease-ttl="87600h" -path="pki-root"  -description="Acme - ROOT CA"         pki
+vault mount -max-lease-ttl="87600h" -path="pki-root"  -description="Acme - ROOT CA" pki
 
 msg rootca-urls "Configure ROOT CA distribution endpoints (CA/CRL)" red
 vault write pki-root/config/urls                          \
@@ -101,7 +101,7 @@ vault write pki-root/config/urls                          \
     crl_distribution_points="https://pki.acme.inc/l0/crl"
 
 msg rootca-generate-crt "Generate ROOT CA (Self Signed)" red
-vault write -format=json pki-root/root/generate/exported                        \
+vault write -format=json pki-root/root/generate/exported    \
     common_name="ACME Authority - L0"                       \
     alt_names="acme.inc,*.acme.inc"                         \
     key_type="ec" key_bits="256"                            \
@@ -117,8 +117,8 @@ msg interca-mount "Mount INTERMEDIATE CA" ylw
 vault mount -max-lease-ttl="8760h" -path="pki-inter" -description="Acme - INTERMEDIATE CA" pki
 
 msg interca-urls "Configure INTERMEDIATE CA distribution endpoints (CA/CRL)" ylw
-vault write pki-inter/config/urls                               \
-    issuing_certificates="https://pki.acme.inc/l1/ca"       \
+vault write pki-inter/config/urls                         \
+    issuing_certificates="https://pki.acme.inc/l1/ca"     \
     crl_distribution_points="https://pki.acme.inc/l1/crl"
 
 msg interca-generate-csr "Generate the INTERMEDIATE CA Certificate Sign Request" ylw
