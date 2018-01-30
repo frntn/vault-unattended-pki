@@ -6,6 +6,7 @@ The following binaries are in your system's PATH :
 
 - bash >=4.3
 - vault >=0.9.0
+- jq >= 1.5
 
 ## Usage 
 
