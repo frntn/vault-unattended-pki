@@ -1,0 +1,16 @@
+---
+image: ubuntu/lts
+packages: 
+- jq
+sources:
+- https://github.com/frntn/vault-unattended-pki.git
+tasks:
+- bin: |
+    cd vault-unattended-pki
+    wget -O vault.zip https://releases.hashicorp.com/vault/0.9.0/vault_0.9.0_linux_amd64.zip
+    unzip vault.zip
+    ls -l vault
+- test: |
+    cd vault-unattended-pki
+    ls -l vault
+    PATH=".:$PATH" ./demo.sh
