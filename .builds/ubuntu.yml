@@ -2,6 +2,7 @@
 image: ubuntu/lts
 packages: 
 - jq
+- unzip
 sources:
 - https://github.com/frntn/vault-unattended-pki.git
 tasks:
