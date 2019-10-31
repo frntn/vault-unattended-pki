@@ -19,4 +19,5 @@ tasks:
     bash --version
     which openssl
     openssl version
+    lsb_release -a
     #PATH=".:$PATH" ./demo.sh
