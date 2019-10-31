@@ -15,4 +15,8 @@ tasks:
 - test: |
     cd vault-unattended-pki
     ls -l vault
-    PATH=".:$PATH" ./demo.sh
+    which bash
+    bash --version
+    which openssl
+    openssl version
+    #PATH=".:$PATH" ./demo.sh
