@@ -34,7 +34,7 @@ rm -rf vault/
 if [ ! -f vault.crt ] || [ ! -f vault.key ]
 then
 set -x
-  curl -sSL https://raw.githubusercontent.com/frntn/x509-san/master/gencert.sh | CRT_CN="xoqnap" CRT_SAN="DNS.1:localhost,IP.1:127.0.0.1" CRT_FILENAME="vault" bash
+  curl -sSL https://raw.githubusercontent.com/frntn/x509-san/master/gencert.sh | sed '1s/$/ -eux/' | CRT_CN="xoqnap" CRT_SAN="DNS.1:localhost,IP.1:127.0.0.1" CRT_FILENAME="vault" bash
 set +x
 fi
 
